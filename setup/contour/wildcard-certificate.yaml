@@ -1,0 +1,19 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: wildcard-certificate
+  namespace: projectcontour
+spec:
+  secretName: wildcard-tls
+  privateKey:
+    rotationPolicy: Always
+  commonName: "*.pod.nvtc.io"
+  dnsNames:
+    - "*.pod.nvtc.io"
+  usages:
+    - digital signature
+    - key encipherment
+    - server auth
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer

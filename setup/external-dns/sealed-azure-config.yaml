@@ -1,0 +1,15 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: azure-config-file
+  namespace: external-dns
+spec:
+  encryptedData:
+    azure.json: AgAbCqJe64hA259W0HQlF4SSwIOh7AHGOyheRgI+fw+APUc+GTwNA+TzFnjuWU7jwPQoNHiCSRM86/yPJ3KNvyCY+F4bkEkIWcoVw4OYxl48w4uYd+WGkVYC0NAeU6xPAG2pjVEZsVjCpAWpTyVpb8hpmfM95UqSYxoYCyUoZTjApXPpXNasV3x2/FAOSkHMZAFCmXD5K4253ctEi+eMiay9NUB/EHaqYLIuUBAFuoub0blRpEXEUzpOUwWd5pAhosHy9EdkJ0XQMYLgaqtU5AdZ3M97pvkYEVkOpumJbtx3WNCabhNVReCLUl71ONNoPL528iJ0PghMBPsegeN7dvi1fZ26WDn//WVYX2vYroBxFvo25goIyClXXV1GYEWOemL8WXEwy6XzAAYD2VxTrOS0H1fg/1wgo0HUF/IOPMSWSoAqBjC8yHuCyOVz9JuvQgoahaJTFAvwDE0KM3zxCsKhn8l/JK672Bbv9Am5IzWJe004tXndMyqhUaO5zJ26+gHaSoDwaQ6lEm8CHDu5kZtSoIpmiGsHJI0EQnu4SDX2L8LTMo5kGrcE5DGGmZDkAy2k2BRjLQ1UL/q+U7/Gv6sCfkC7tKbcLTKGRvEZ4miTckULND0hrv5MJhF6Xz+8GhDcn9WgO6hAYlIGGl1/wSpNbIoroorjNtNITNC2e24Vynloc1sDB8fcZsCSkAqTi6p3TSfUT23tU9xiaVT6nqWYGy3G86yyc3uwkHQBu3yY21XmQFb4rFpuYE8bczUs62UQ2RUOQuZB50w9b/77in4y4n6pMPDDWiOGYusGzXtIgjSOOu2DlN/FmSWU6e/FzanOtapa8fAyXbIYcWFlfGfoPIIEewbND2kzz/SN/vELXQ/5U4z0CBG1VSdbtk1SEmftoNbBBfBwe/sFgRGbAmyJOkwEZLJ30fJNGuMdiI14hdzY77GDW1aLd/Spegjg3ROa7eW9k+wTrqtEA23YFnPBQchps8zgLlYymJOUIgNV8JgsC6smmRNebXANh4wpvS8+MOGC2Y7OJn+JDNnpvabzbH8r52+IMNM=
+  template:
+    metadata:
+      creationTimestamp: null
+      name: azure-config-file
+      namespace: external-dns
