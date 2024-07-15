@@ -1,0 +1,25 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-production
+  namespace: cert-manager
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: corvin.schapoehler@novatec-gmbh.de
+    privateKeySecretRef:
+      name: letsencrypt-production
+    solvers:
+    - dns01:
+        azureDNS:
+          clientID: 9619d008-167a-40a3-bebd-47ac8947d128
+          clientSecretSecretRef:
+          # The following is the secret we created in Kubernetes. Issuer will use this to present challenge to Azure DNS.
+            name: azuredns-config
+            key: client-secret
+          subscriptionID: 159e707f-cc79-444b-b87a-9711f141429b
+          tenantID: 837768d2-29f8-4c82-bd9c-ba95052b2c7f
+          resourceGroupName: pod
+          hostedZoneName: pod.nvtc.io
+          # Azure Cloud Environment, default to AzurePublicCloud
+          environment: AzurePublicCloud

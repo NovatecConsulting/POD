@@ -1,0 +1,27 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: pod-gateway
+  namespace: projectcontour
+spec:
+  gatewayClassName: contour
+  listeners:
+  - allowedRoutes:
+      namespaces:
+        from: All
+    name: http-listener
+    port: 80
+    protocol: HTTP
+  - allowedRoutes:
+      namespaces:
+        from: All
+    protocol: HTTPS
+    port: 443
+    name: https-listener
+    tls:
+      mode: Terminate
+      certificateRefs:
+        - group: ""
+          kind: Secret
+          name: wildcard-tls
+    # TODO GRPC and HTTPS
