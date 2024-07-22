@@ -5,6 +5,47 @@ metadata:
     app.kubernetes.io/name: argocd-cmd-params-cm
     app.kubernetes.io/part-of: argocd
   name: argocd-cmd-params-cm
-  namespace: argocd
 data:
   server.insecure: "true"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app.kubernetes.io/name: argocd-cm
+    app.kubernetes.io/part-of: argocd
+  name: argocd-cm
+data:
+
+  # disable admin account
+  admin.enabled: "false"
+  # allow all users to access as read only
+  users.anonymous.enabled: "true"
+  # EntraID OIDC to get admin Access for selected users
+  url: https://argocd.pod.nvtc.io
+  dex.config: |
+    logger:
+      level: debug
+      format: json
+    connectors:
+    - type: microsoft
+      id: microsoft
+      name: Novatec Consulting GmbH
+      config:
+        clientID: $oidc.azure.clientID
+        clientSecret: $oidc.azure.clientSecret
+        redirectURI: http://localhost:8080/api/dex/callback
+        tenant: 837768d2-29f8-4c82-bd9c-ba95052b2c7f
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app.kubernetes.io/name: argocd-cm
+    app.kubernetes.io/part-of: argocd
+  name: argocd-rbac-cm
+data:
+  policy.default: role:readonly
+  policy.csa.csv: |
+    g, POD, role:admin
+  scopes: "[groups]"
