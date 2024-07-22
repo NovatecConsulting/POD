@@ -14,7 +14,7 @@ spec:
       recurse: true
     path: setup/contour
     repoURL: https://github.com/NovatecConsulting/POD
-    targetRevision: docs
+    targetRevision: develop
   syncPolicy:
     automated:
       prune: true

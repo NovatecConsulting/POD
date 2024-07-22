@@ -54,7 +54,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/NovatecConsulting/POD
-    targetRevision: docs
+    targetRevision: develop
     path: setup/crossplane
   syncPolicy:
     automated:
