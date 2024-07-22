@@ -2,12 +2,12 @@ apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
   name: komoplane-route
-  namespace: crossplane-system
 spec:
   parentRefs:
   - name: pod-gateway
     sectionName: https-listener
     kind: Gateway
+    namespace: projectcontour
   hostnames:
   - "crossplane.pod.nvtc.io"
   rules:

@@ -2,7 +2,6 @@ apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
   name: pod-gateway
-  namespace: projectcontour
 spec:
   gatewayClassName: contour
   listeners:
@@ -24,4 +23,3 @@ spec:
         - group: ""
           kind: Secret
           name: wildcard-tls
-    # TODO GRPC and HTTPS

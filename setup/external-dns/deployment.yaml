@@ -32,7 +32,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: external-dns
-
 spec:
   strategy:
     type: Recreate
@@ -53,6 +52,8 @@ spec:
               # Add provider-specific flags...
             - --provider=azure
             - --azure-resource-group=pod
+            - --registry=txt
+            - --txt-owner-id=external-dns
           volumeMounts:
             - name: azure-config-file
               mountPath: /etc/kubernetes
