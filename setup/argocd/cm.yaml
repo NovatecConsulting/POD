@@ -48,4 +48,5 @@ data:
   policy.default: role:readonly
   policy.csa.csv: |
     g, POD, role:admin
+    g, GROUP, role:admin
   scopes: "[groups]"
