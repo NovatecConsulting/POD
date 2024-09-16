@@ -54,6 +54,7 @@ spec:
             - --azure-resource-group=pod
             - --registry=txt
             - --txt-owner-id=external-dns
+            - --domain-filter=pod.nvtc.io # Only use this external-dns config for POD, applications need to be managed differently (in the future)
           volumeMounts:
             - name: azure-config-file
               mountPath: /etc/kubernetes
