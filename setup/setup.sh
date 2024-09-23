@@ -8,3 +8,4 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 
 # Setup this repo as Argo Project which will automatically create the Projects for all other tools
 kubectl apply -f setup.yaml
+
