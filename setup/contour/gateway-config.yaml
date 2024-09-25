@@ -1,0 +1,18 @@
+kind: ContourConfiguration
+apiVersion: projectcontour.io/v1alpha1
+metadata:
+  name: "pod-gateway-config"
+spec:
+  envoy:
+    service:
+      name: envoy-pod-gateway
+      namespace: projectcontour
+    timeouts:
+      connectionIdleTimeout: "infinity"
+      connectTimeout: "infinity"
+      requestTimeout: "infinity"
+      maxConnectionDuration: "infinity"
+  gateway:
+    gatewayRef:
+      name: pod-gateway
+      namespace: projectcontour
