@@ -4,6 +4,8 @@ metadata:
   name: wildcard-certificate
 spec:
   secretName: wildcard-tls
+  duration: 2160h # 90 days 
+  renewBefore: 360h # 15 days
   privateKey:
     rotationPolicy: Always
   commonName: "*.pod.nvtc.io"
@@ -16,3 +18,4 @@ spec:
   issuerRef:
     name: letsencrypt-production
     kind: ClusterIssuer
+  
