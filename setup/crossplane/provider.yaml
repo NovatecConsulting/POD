@@ -4,3 +4,10 @@ metadata:
   name: provider-azure-network
 spec:
   package: xpkg.upbound.io/upbound/provider-azure-network:v0.34.0
+---
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: provider-azure-cognitiveservices
+spec:
+  package: xpkg.upbound.io/upbound/provider-azure-cognitiveservices:v1.10.0
